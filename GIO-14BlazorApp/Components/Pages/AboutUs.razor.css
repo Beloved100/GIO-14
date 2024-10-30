@@ -1,0 +1,47 @@
+﻿/* About Us Section */
+.about-section {
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 50px 0; /* Add vertical padding */
+    min-height: 400px; /* Set minimum height to ensure enough space */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center content horizontally */
+    margin-bottom:0;
+}
+
+    .about-section h2 {
+        font-size: 4rem; /* Large font for the heading */
+        font-weight: bold;
+        color: #f1c40f; /* Yellow color for the heading */
+        margin-bottom: 40px; /* Space between the heading and the first paragraph */
+        text-align:center;
+    }
+
+    .about-section p {
+        font-size: 1.3rem; /* Standard readable size */
+        line-height: 2.5; /* Good spacing for readability */
+        color: #000000; /* Darker color for the body text */
+        margin-bottom: 5px; /* Adjusted spacing between paragraphs */
+        text-align: center;
+    }
+
+/* Optional: Container to align the content in the middle */
+.container {
+    max-width: 900px; /* Restrict the content width */
+    text-align: left; /* Align text to the left */
+    margin-left:150px;
+}
+
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 2.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    .about-section p {
+        font-size: 1rem; /* Smaller text for mobile devices */
+    }
+
+    .about-section {
+        padding: 30px 0; /* Reduce padding for smaller screens */
+    }
+}

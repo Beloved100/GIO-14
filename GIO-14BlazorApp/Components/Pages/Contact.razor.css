@@ -1,0 +1,26 @@
+﻿/* Contact Info Section */
+.contact-info-section {
+    display: flex;
+    justify-content: space-between; /* Space out items to the edges */
+    align-items: center;
+    max-width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 2rem 0;
+}
+
+.contact-item {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+    .contact-item i {
+        font-size: 5rem; /* Icon size */
+        color: #000;
+    }
+
+    .contact-item p {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        color: #333;
+    }

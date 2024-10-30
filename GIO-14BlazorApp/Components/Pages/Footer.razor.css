@@ -1,0 +1,35 @@
+﻿/* Get in Touch Section Styling */
+.get-in-touch-section {
+    /*background-color: #000;*/ /* Black background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 5rem 1rem;
+    min-height: 50vh; /* Optional: control section height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .get-in-touch-section h2 {
+        
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.0rem;
+    }
+
+.contact-button {
+    background-color: #ffc107; /* Yellow background for the button */
+    color: #000; /* Black text for button */
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.footer-text {
+    margin-top: 20rem;
+    font-size: 1rem;
+    color: #999;
+}

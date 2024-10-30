@@ -1,0 +1,36 @@
+﻿/* Services Section Styling */
+.services-section {
+    background-color: #f5f5f5;
+    margin-top:0; 
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ffc107; /* Yellow color for title */
+    font-weight: bold;
+}
+
+.service-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: scale(1.05); /* Slight scale-up on hover */
+    }
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.service-description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.img{
+    margin-top:0;
+    width:100%;
+}
