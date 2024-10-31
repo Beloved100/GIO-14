@@ -25,10 +25,7 @@
         z-index: 1;
     }
 
-/* Center the caption with flexbox */
-.carousel-caption {
-    z-index:2;
-}
+
 .top {
     display: flex;
     flex-direction: column;
@@ -36,50 +33,28 @@
     align-items: center;
 }
 
-/*.carousel-background {*/
-/*    position: relative;*/
-/*    display: flex;*/
-/*    align-items: center;
-    justify-content: center;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-    /*width: 100vw;*/ /* Full viewport width */
-    /*color: white;
-}*/
-
-    /* Dark overlay */
- /*.carousel-background::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);*/ /* 50% dark overlay */
-        /*z-index: 1;
- }*/
-
 /* Centered caption */
 .carousel-caption {
     position: relative;
     z-index: 2; /* Ensure content is above overlay */
     text-align: center;
-    max-width: 80%; /* Optional: limit text width for readability */
+    max-width: 100%; /* Optional: limit text width for readability */
     margin-top: 10px;
 }
 
     /* Text styling */
-    .carousel-caption h2 {
+.carousel-caption h2 {
         font-size: 2.5rem; /* Adjust font size as needed */
         
-    }
+}
 
-    .carousel-caption p {
+.carousel-caption p {
         font-size: 1.2rem;
         margin-top: 1rem;
-    }
+}
 
-    .carousel-caption .btn {
+.carousel-caption .btn {
         font-size: 1.2rem;
         margin-top: 1.5rem;
-    }
+}
+aq\v
