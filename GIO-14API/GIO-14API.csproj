@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\APILibrary\APILibrary.csproj" />
+    <ProjectReference Include="..\GIO-14APILibrary\GIO-14APILibrary.csproj" />
   </ItemGroup>
 
 </Project>
