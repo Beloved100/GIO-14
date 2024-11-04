@@ -7,8 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ModelforUI\" />
+    <Compile Remove="ModelforUI\**" />
+    <EmbeddedResource Remove="ModelforUI\**" />
+    <None Remove="ModelforUI\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Models\" />
+    <Folder Include="ModelsForUI\" />
+    <Folder Include="Data\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="ReturnLists\" />
+    <Folder Include="UIAlgorithms\" />
     <Folder Include="ReturnLists\" />
     <Folder Include="UIAlgorithms\" />
   </ItemGroup>
