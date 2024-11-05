@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GIO-14API", "GIO-14API\GIO-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GIO-14BlazorLibrary", "GIO-14BlazorLibrary\GIO-14BlazorLibrary.csproj", "{EAC64698-A1A4-4699-B4F4-3B6006F6BE7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIO-14APILibrary", "GIO-14APILibrary\GIO-14APILibrary.csproj", "{BD47A374-8570-461C-B084-82855B176F50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GIO-14APILibrary", "GIO-14APILibrary\GIO-14APILibrary.csproj", "{BD47A374-8570-461C-B084-82855B176F50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
