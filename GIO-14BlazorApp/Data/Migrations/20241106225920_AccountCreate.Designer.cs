@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GIO_14BlazorApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241031195241_InitialIdentitySchema")]
-    partial class InitialIdentitySchema
+    [Migration("20241106225920_AccountCreate")]
+    partial class AccountCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

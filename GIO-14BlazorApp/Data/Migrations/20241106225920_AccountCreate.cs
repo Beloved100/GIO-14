@@ -5,7 +5,7 @@
 namespace GIO_14BlazorApp.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialIdentitySchema : Migration
+    public partial class AccountCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
