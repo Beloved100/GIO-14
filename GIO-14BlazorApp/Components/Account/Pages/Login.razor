@@ -4,11 +4,14 @@
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Identity
 @using GIO_14BlazorApp.Data
+@using GIO_14BlazorLibrary.UIAlgorithms
 
 @inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
+@inject IUIClientAlgorithms UIClientAlgorithms
 
 <PageTitle>Log in</PageTitle>
 
@@ -92,7 +95,18 @@
         var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
         if (result.Succeeded)
         {
+            try
+            {
+                string user = SignInManager.Context.User.Identity.Name;
 
+                ApplicationUser applicationUser = await UserManager.FindByEmailAsync(user);
+
+                await UIClientAlgorithms.SetUpClientAsync(applicationUser.Id, user);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
             Logger.LogInformation("User logged in.");
             RedirectManager.RedirectTo(ReturnUrl);

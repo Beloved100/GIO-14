@@ -8,48 +8,44 @@ using System.Threading.Tasks;
 
 namespace GIO_14BlazorLibrary.Data
 {
-	public class ClientDataService : IClientDataService
-	{
-		private readonly ISqlDataAccess _dataAccess;
+    public class ClientDataService : IClientDataService
+    {
+        private readonly ISqlDataAccess _dataAccess;
 
-		public ClientDataService(ISqlDataAccess dataAccess)
-		{
-			_dataAccess = dataAccess;
-		}
-
-
-
-		public async Task AddCareAilment(IClientDbModel client)
-		{
-			await _dataAccess.SaveData("dbo.spClient_Insert", client, "GIO-14");
-		}
+        public ClientDataService(ISqlDataAccess dataAccess)
+        {
+            _dataAccess = dataAccess;
+        }
 
 
-		public async Task<List<IClientDbModel>> ReadClient(string AuthId)
-		{
-			var client = await _dataAccess.LoadData<ClientDbModel, dynamic>("dbo.spClient_Read", new { AuthId }, "GIO-14");
 
-			return client.ToList<IClientDbModel>();
-		}
-
-
-		public async Task<List<IClientDbModel>> UpdateClient(IClientDbModel client, string AuthId)
-		{
-			await _dataAccess.SaveData("dbo.spClient_Insert", client, "GIO-14Database");
-
-			var clientDb = await _dataAccess.LoadData<ClientDbModel, dynamic>("dbo.spClient_Read", new { AuthId }, "GIO-14");
-
-			return clientDb.ToList<IClientDbModel>();
-		}
+        public async Task CreateClient(ClientDbModel client)
+        {
+            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
+        }
 
 
-		public async Task<List<IClientDbModel>> DeleteClient(IClientDbModel client, string AuthId)
-		{
-			await _dataAccess.SaveData("dbo.spClient_Insert", client, "GIO-14Database");
+        public async Task<List<ClientDbModel>> ReadClient(string authId)
+        {
+            var client = await _dataAccess.LoadDataAsync<ClientDbModel, dynamic>("dbo.spClient_Read", new { authId }, "GIO-14");
 
-			var clientDb = await _dataAccess.LoadData<ClientDbModel, dynamic>("dbo.spClient_Read", new { AuthId }, "GIO-14");
+            return client;
+        }
 
-			return clientDb.ToList<IClientDbModel>();
-		}
-	}
+
+        public async Task<List<ClientDbModel>> UpdateClient(ClientDbModel client)
+        {
+            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
+
+            var clientDb = await _dataAccess.LoadDataAsync<ClientDbModel, dynamic>("dbo.spClient_Read", new { }, "GIO-14");
+
+            return clientDb;
+        }
+
+
+        public async Task DeleteClient(ClientDbModel client)
+        {
+            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
+        }
+    }
 }

@@ -1,6 +1,11 @@
 using GIO_14BlazorApp.Components;
 using GIO_14BlazorApp.Components.Account;
+using GIO_14BlazorApp.Components.Pages;
 using GIO_14BlazorApp.Data;
+using GIO_14BlazorLibrary.Data;
+using GIO_14BlazorLibrary.DataAccess;
+using GIO_14BlazorLibrary.Models;
+using GIO_14BlazorLibrary.UIAlgorithms;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +39,18 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+
+// MicroCareBlazor services
+
+builder.Services.AddSingleton<IClientDbModel, ClientDbModel>();
+
+builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+
+builder.Services.AddSingleton<IClientDataService, ClientDataService>();
+
+builder.Services.AddTransient<IUIClientAlgorithms, UIClientAlgorithms>();
+
 
 var app = builder.Build();
 

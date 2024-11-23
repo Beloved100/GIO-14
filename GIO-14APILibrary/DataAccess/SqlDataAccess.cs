@@ -1,14 +1,14 @@
 ﻿using Dapper;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GIO_14BlazorLibrary.DataAccess
+namespace GIO_14APILibrary.DataAccess
 {
     public class SqlDataAccess : ISqlDataAccess
     {
@@ -24,7 +24,7 @@ namespace GIO_14BlazorLibrary.DataAccess
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 
-            using IDbConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GIO-14DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            using IDbConnection connection = new SqlConnection(connectionString);
 
             var rows = await connection.QueryAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
 

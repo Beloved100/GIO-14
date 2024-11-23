@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace GIO_14BlazorLibrary.Data
 {
-	public interface IClientDataService
-	{
-		Task AddCareAilment(IClientDbModel client);
-		Task<List<IClientDbModel>> DeleteClient(IClientDbModel client, string AuthId);
-		Task<List<IClientDbModel>> ReadClient(string AuthId);
-		Task<List<IClientDbModel>> UpdateClient(IClientDbModel client, string AuthId);
-	}
+    public interface IClientDataService
+    {
+        Task CreateClient(ClientDbModel client);
+        Task DeleteClient(ClientDbModel client);
+        Task<List<ClientDbModel>> ReadClient(string authId);
+        Task<List<ClientDbModel>> UpdateClient(ClientDbModel client);
+    }
 }

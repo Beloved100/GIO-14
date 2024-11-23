@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GIO_14BlazorLibrary.DataAccess
+namespace GIO_14APILibrary.DataAccess
 {
     public interface ISqlDataAccess
     {
