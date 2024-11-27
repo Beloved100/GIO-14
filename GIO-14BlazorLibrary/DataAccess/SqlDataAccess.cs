@@ -24,7 +24,7 @@ namespace GIO_14BlazorLibrary.DataAccess
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 
-            using IDbConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GIO-14DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            using IDbConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GIO-14DB;Integrated Security=True");
 
             var rows = await connection.QueryAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
 
@@ -35,7 +35,7 @@ namespace GIO_14BlazorLibrary.DataAccess
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 
-            using IDbConnection connection = new SqlConnection(connectionString);
+            using IDbConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GIO-14DB;Integrated Security=True");
 
             await connection.ExecuteAsync(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
         }

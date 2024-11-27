@@ -6,9 +6,9 @@ namespace GIO_14BlazorLibrary.Data
 {
     public interface IClientDataService
     {
-        Task CreateClient(ClientDbModel client);
-        Task DeleteClient(ClientDbModel client);
-        Task<List<ClientDbModel>> ReadClient(string authId);
-        Task<List<ClientDbModel>> UpdateClient(ClientDbModel client);
+        Task CreateClientAsync(ClientDbModel client);
+        Task DeleteClientAsync(string authId);
+        Task<List<ClientDbModel>> ReadClientAsync(string authId);
+        Task<List<ClientDbModel>> UpdateClientAsync(ClientDbModel client);
     }
 }

@@ -21,8 +21,24 @@ namespace GIO_14BlazorLibrary.UIAlgorithms
 
         public async Task SetUpClientAsync(string authId, string emailAddress)
         {
+            ClientDbModel _clientModel = new ClientDbModel();
 
-            List<ClientDbModel> clientDb = (List<ClientDbModel>)await _clientDS.ReadClient(authId);
+            List<ClientDbModel> clientDb = (List<ClientDbModel>)await _clientDS.ReadClientAsync(authId);
+
+            if (clientDb.Count == 0)
+            {
+                _clientModel.AuthId = authId;
+                _clientModel.Archive = false;
+                _clientModel.Automation = "";
+                _clientModel.NameAddressDetails = emailAddress.PadRight(500);
+                _clientModel.AccountStatus = "";
+                _clientModel.OptionsLogsDetails = "";
+                _clientModel.DateCreated = DateTime.Now;
+                _clientModel.LastModified = DateTime.Now;
+
+                await _clientDS.CreateClientAsync(_clientModel);
+                await _clientDS.ReadClientAsync(authId);
+            }
 
             return;
         }

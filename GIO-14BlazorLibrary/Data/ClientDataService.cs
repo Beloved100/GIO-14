@@ -19,13 +19,13 @@ namespace GIO_14BlazorLibrary.Data
 
 
 
-        public async Task CreateClient(ClientDbModel client)
+        public async Task CreateClientAsync(ClientDbModel client)
         {
-            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
+            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", new { client.AuthId, client.Archive, client.Automation, client.NameAddressDetails, client.AccountStatus, client.OptionsLogsDetails, client.DateCreated, client.LastModified }, "GIO-14");
         }
 
 
-        public async Task<List<ClientDbModel>> ReadClient(string authId)
+        public async Task<List<ClientDbModel>> ReadClientAsync(string authId)
         {
             var client = await _dataAccess.LoadDataAsync<ClientDbModel, dynamic>("dbo.spClient_Read", new { authId }, "GIO-14");
 
@@ -33,19 +33,19 @@ namespace GIO_14BlazorLibrary.Data
         }
 
 
-        public async Task<List<ClientDbModel>> UpdateClient(ClientDbModel client)
+        public async Task<List<ClientDbModel>> UpdateClientAsync(ClientDbModel client)
         {
             await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
 
-            var clientDb = await _dataAccess.LoadDataAsync<ClientDbModel, dynamic>("dbo.spClient_Read", new { }, "GIO-14");
+            var clientDb = await _dataAccess.LoadDataAsync<ClientDbModel, dynamic>("dbo.spClient_Read", new { client.AuthId, client.Archive }, "GIO-14");
 
             return clientDb;
         }
 
 
-        public async Task DeleteClient(ClientDbModel client)
+        public async Task DeleteClientAsync(string authId)
         {
-            await _dataAccess.SaveDataAsync("dbo.spClient_Insert", client, "GIO-14");
+            await _dataAccess.SaveDataAsync("dbo.spClient_Delete", authId, "GIO-14");
         }
     }
 }

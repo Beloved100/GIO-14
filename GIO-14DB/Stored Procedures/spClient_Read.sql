@@ -3,7 +3,7 @@
 
 AS
 begin
-	SELECT AuthId, Automation, NameAddressDetails, AccountStatus, DateCreated, LastModified
+	SELECT AuthId, Archive, Automation, NameAddressDetails, AccountStatus, OptionsLogsDetails, DateCreated, LastModified
 	from dbo.Client
 	where Archive = 0 and AuthId = @AuthId;
 end
